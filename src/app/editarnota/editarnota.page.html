@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>
+      Editar Nota
+    </ion-title>
+    
+  </ion-toolbar>
+  <ion-card [formGroup]="forma" *ngIf="forma">
+    <ion-card-header>
+      <ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input type="text" formControlName="titulo"></ion-input>
+      </ion-item>
+      
+     
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Descripcion</ion-label>
+        <ion-input type="text" formControlName="descripcion"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  
+    <ion-button fill="clear"routerLink="/home">Cancelar</ion-button>
+    <ion-button fill="clear" (click)="editarNota()">Guardar</ion-button>
+  </ion-card>
+</ion-header>
+
+
+

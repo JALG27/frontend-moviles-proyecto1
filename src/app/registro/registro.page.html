@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informacion</ion-card-title>
+    </ion-card-header>
+    <ion-card-content [formGroup]="forma">
+     <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" formControlName="apellido"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <span class="error-input" *ngIf="correoNoValido">Ingrese un correo válido</span>
+     </ion-item>
+     <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+     </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-button size="full" color="light" (click)="register()">Registrar</ion-button>
+
+</ion-content>

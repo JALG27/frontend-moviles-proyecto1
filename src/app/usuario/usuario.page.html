@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>
+      Editar Perfil
+    </ion-title>
+    
+  </ion-toolbar>
+  <ion-card [formGroup]="forma" *ngIf="forma">
+      <ion-card-header>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
+        </ion-item>
+        
+       
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" formControlName="apellido"></ion-input>
+        </ion-item>
+      </ion-card-content>
+  
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+          <span class="error-input" *ngIf="correoNoValido">Ingrese un correo válido</span>
+        </ion-item>
+      </ion-card-content>
+  
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    
+      <ion-button fill="clear"routerLink="/home">Cancelar</ion-button>
+      <ion-button fill="clear" (click)="editarUsuario()">Guardar</ion-button>
+    
+  </ion-card>
+</ion-header>
